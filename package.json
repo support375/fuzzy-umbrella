@@ -1,0 +1,17 @@
+{
+  "name": "fuzzy-umbrella",
+  "version": "1.0.0",
+  "description": "toinvestment-investment-software",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test-connection.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^12.4.0",
+    "firebase-admin": "^13.5.0"
+  }
+}
