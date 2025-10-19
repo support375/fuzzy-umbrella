@@ -12,7 +12,7 @@ interface Investment {
 }
 
 export default function PortfolioDashboard() {
-  const [investments, setInvestments] = useState<Investment[]>([
+  const [investments] = useState<Investment[]>([
     {
       id: '1',
       name: 'Apple Inc.',
@@ -52,6 +52,7 @@ export default function PortfolioDashboard() {
   const calculateGainLossPercentage = (investment: Investment) => {
     const gainLoss = calculateGainLoss(investment)
     const purchaseValue = investment.shares * investment.purchasePrice
+    if (purchaseValue === 0) return 0
     return (gainLoss / purchaseValue) * 100
   }
 
@@ -101,7 +102,7 @@ export default function PortfolioDashboard() {
             }`}
           >
             {totalGainLoss >= 0 ? '+' : ''}
-            {((totalGainLoss / totalInvested) * 100).toFixed(2)}%
+            {totalInvested > 0 ? ((totalGainLoss / totalInvested) * 100).toFixed(2) : '0.00'}%
           </p>
         </div>
       </div>
