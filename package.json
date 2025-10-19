@@ -1,7 +1,7 @@
 {
   "name": "fuzzy-umbrella",
   "version": "1.0.0",
-  "description": "toinvestment-investment-software",
+  "description": "Investment software with Firebase integration",
   "main": "index.js",
   "scripts": {
     "test": "node test-connection.js",
