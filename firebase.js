@@ -24,15 +24,15 @@ try {
     appId: process.env.FIREBASE_APP_ID,
     measurementId: process.env.FIREBASE_MEASUREMENT_ID
   };
-  
-  // Validate that required environment variables are set
-  if (!firebaseConfig.apiKey || !firebaseConfig.projectId || !firebaseConfig.appId) {
-    throw new Error(
-      'Firebase configuration is incomplete. Please ensure you have either:\n' +
-      '1. Created firebase-config.js with your project credentials, OR\n' +
-      '2. Set the required environment variables (FIREBASE_API_KEY, FIREBASE_PROJECT_ID, FIREBASE_APP_ID)'
-    );
-  }
+}
+
+// Validate that required configuration is set (regardless of source)
+if (!firebaseConfig.apiKey || !firebaseConfig.projectId || !firebaseConfig.appId) {
+  throw new Error(
+    'Firebase configuration is incomplete. Please ensure you have either:\n' +
+    '1. Created firebase-config.js with your project credentials, OR\n' +
+    '2. Set the required environment variables (FIREBASE_API_KEY, FIREBASE_PROJECT_ID, FIREBASE_APP_ID)'
+  );
 }
 
 // Initialize Firebase
